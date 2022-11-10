@@ -1,9 +1,12 @@
 .product-container {
+  position: relative;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: all ease-in-out 0.5s;
-  border-radius: 6px;
+  border-radius: 20px;
+  opacity: 1;
+  cursor: pointer;
   &:hover {
-    transform: scale(1.2);
+    opacity: 0.7;
+    transition: opacity .2s ease-out;
   }
   img {
     width: 160px;
@@ -37,4 +40,20 @@
   font-size: 20px;
   font-weight: 500;
   margin-bottom:4px;
+}
+.price {
+  background-color: #f8d07c;
+  position:absolute;
+  top:0;
+  right:0;
+  padding:8px;
+  font-size: 14px;
+  border-radius: 0 20px 0 20px;
+  font-weight: 600;
+}
+.eye-icon {
+  position: absolute;
+  top:45%;
+  left: 50%;
+  font-size: 24px;
 }

@@ -14,5 +14,7 @@ export type ProductType = {
         coating: { _text: string };
         size: { _text: string };
       }[];
+      currency:string
+      price:string
     };
   };

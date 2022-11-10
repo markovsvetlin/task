@@ -1,9 +1,18 @@
 import { ProductType } from "../types";
 import "./styles.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-regular-svg-icons'
+import { useState } from "react";
 
 const Product = ({ product }: ProductType) => {
+  const [isHovered, setIsHovered] = useState(false)
   return (
-    <div className="product-container">
+    <>
+    <div onMouseLeave={()=> setIsHovered(false)} onMouseEnter={()=> setIsHovered(true)} className="product-container">
+     {isHovered && <FontAwesomeIcon className="eye-icon" icon={faEye} /> } 
+      <div className="price">
+      <span>{`${product.price} ${product.currency}`}</span>
+      </div>
       <img alt="productImage" src={product?.image} />
       <div className="info-container">
         {product.tampons.map((item, index) => {
@@ -19,9 +28,9 @@ const Product = ({ product }: ProductType) => {
             </div>
           );
         })}
-
       </div>
     </div>
+    </>
   );
 };
 
